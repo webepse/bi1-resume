@@ -1,0 +1,149 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide{
+    width: 100%;
+    min-height: 100vh;
+}
+
+header{
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #logo{
+    width: 100px;
+    height: 100px;
+    background-color: #bf1a3b;
+    margin-left: 15px;
+}
+
+header nav{
+    margin-right: 15px;
+    width: 60%;
+
+    display: flex;
+    align-items: center;
+}
+
+header nav ul{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #ececec;
+    font-size: 20px;
+}
+
+header #burger{
+    width: 50px;
+    margin-right: 15px;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 101;
+}
+
+header #burger .bar{
+    width: 100%;
+    height: 3px;
+    background-color: #ececec;
+    margin-bottom: 8px;
+}
+
+#home .container{
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.boite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#b1{
+    background-color: #bf1a3b;
+}
+
+#b2{
+    background-color: mediumpurple;
+}
+
+#b3{
+    background-color: gold;
+}
+
+/*** menu-mobile ***/
+#menu-mobile{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #333333;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#menu-mobile ul{
+    list-style: none;
+}
+
+#menu-mobile ul li a{
+    text-decoration: none;
+    color: #ececec;
+    font-size: 20px;
+}
+
+#menu-mobile ul li{
+    margin-bottom: 20px;
+}
+
+.open{
+    left: 0 !important;
+}
+
+/*** media ***/
+@media all and (max-width: 768px){
+    header nav{
+        display: none;
+    }
+    header #burger{
+        display: block;
+    }
+    #home .container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #b3{
+        grid-column: span 2;
+    }
+}
+
+@media all and (max-width: 500px)
+{
+    #home .container{
+        grid-template-columns: 1fr;
+    }
+
+    #b3{
+        grid-column: span 1;
+    }
+}
